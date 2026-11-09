@@ -1,0 +1,549 @@
+/* =========================================
+    1. PENGATURAN DASAR
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Warna utama website */
+:root {
+    --cream: #fbf4ea;
+    --blue: #dcecf5;
+    --pink: #ebcfd0;
+    --brown: #49372f;
+    --gold: #e8b84a;
+    --white: #fffdf9;
+    --muted: #806e64;
+    --line: #eadfd3;
+}
+
+/* Tampilan seluruh halaman */
+body {
+    background: var(--cream);
+    color: var(--brown);
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
+
+/* Pengaturan gambar dan tautan */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================
+    2. HEADER DAN LOGO
+========================================= */
+
+.site-header {
+    background: #9c7d9c;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Bagian logo dan nama brand */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.brand img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-family: Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+.brand-tagline {
+    font-size: 0.72rem;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    font-style: italic;
+}
+
+
+/* =========================================
+    3. NAVIGASI MENU
+========================================= */
+
+.site-nav {
+    background: var(--pink);
+    padding: 10px 5%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+}
+
+.site-nav a {
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: bold;
+    padding: 5px 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+    border-color: var(--brown);
+}
+
+.menu-toggle {
+    display: none;
+    border: 1px solid var(--line);
+    background: var(--cream);
+    color: var(--brown);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* =========================================
+    4. LAYOUT UTAMA DAN SIDEBAR
+========================================= */
+
+.page-wrap {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: minmax(0, 2.6fr) minmax(230px, 1fr);
+    gap: 25px;
+}
+
+main {
+    min-width: 0;
+}
+
+.panel {
+    background: var(--white);
+    padding: 28px;
+    border-radius: 16px;
+    margin-bottom: 22px;
+    border: 1px solid var(--line);
+}
+
+.sidebar .panel {
+    background: #f4e5d5;
+}
+
+.sidebar ul {
+    padding-left: 20px;
+}
+
+
+/* =========================================
+    5. JUDUL DAN PARAGRAF
+========================================= */
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, serif;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+.eyebrow {
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+
+/* =========================================
+    6. HERO SECTION
+========================================= */
+
+.hero {
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(251, 244, 234, 0.96),
+            rgba(251, 244, 234, 0.65)
+        ),
+        url('../images/herobgfg.jpg') center / cover no-repeat;
+}
+
+.hero-inner {
+    max-width: 650px;
+}
+
+.hero h1 {
+    margin: 12px 0;
+}
+
+.hero p {
+    max-width: 560px;
+}
+
+
+/* =========================================
+    7. TOMBOL
+========================================= */
+
+.button,
+button {
+    display: inline-block;
+    background: var(--brown);
+    color: white;
+    border: 0;
+    border-radius: 30px;
+    padding: 11px 20px;
+    margin: 12px 8px 0 0;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button.secondary {
+    background: var(--pink);
+    color: var(--brown);
+}
+
+
+/* =========================================
+    8. KARTU LAYANAN DAN ARTIKEL
+========================================= */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 165px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.card-link {
+    font-weight: bold;
+    font-size: 0.88rem;
+    text-decoration: none;
+}
+
+
+/* =========================================
+    9. BAGIAN ABOUT
+========================================= */
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: center;
+}
+
+.split img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+
+/* =========================================
+    10. SIDEBAR DAN PROFIL
+========================================= */
+
+.clock {
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.profile-icon {
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+
+/* =========================================
+    11. HALAMAN ARTIKEL
+========================================= */
+
+.article-meta {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.article-image {
+    width: 100%;
+    max-height: 390px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin: 18px 0;
+}
+
+
+/* =========================================
+    12. GALERI FOTO
+========================================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.gallery-grid img {
+    height: 190px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* Perbaikan untuk Tombol Kategori Galeri */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0 20px;
+    align-items: center;
+}
+
+.filter-buttons button,
+.filter-buttons .button {
+    margin: 0;
+    background: var(--blue);
+    color: var(--brown);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.filter-buttons button.selected,
+.filter-buttons .button.selected {
+    background: var(--brown);
+    color: white;
+}
+.hidden {
+    display: none !important;
+}
+
+/* =========================================
+    13. FORMULIR
+========================================= */
+
+form {
+    display: grid;
+    gap: 14px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d9cabe;
+    border-radius: 8px;
+    font: inherit;
+    background: white;
+    color: var(--brown);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+/* =========================================
+    14. TABEL PAKET
+========================================= */
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+}
+
+th,
+td {
+    border: 1px solid var(--line);
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: var(--pink);
+}
+
+
+/* =========================================
+    15. FOOTER
+========================================= */
+
+.site-footer {
+    background: var(--brown);
+    color: var(--white);
+    padding: 35px 5%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.site-footer a {
+    color: var(--white);
+    margin: 0 8px;
+}
+
+.site-footer p {
+    color: #eadfd3;
+}
+
+
+/* =========================================
+    16. RESPONSIVE TABLET & HP
+========================================= */
+
+@media (max-width: 850px) {
+    .page-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        padding: 12px 4%;
+    }
+
+    .brand-name {
+        font-size: 1.1rem;
+    }
+
+    .brand img {
+        width: 110px;
+        height: auto;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .site-nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .site-nav.open {
+        display: flex;
+    }
+
+    .cards,
+    .gallery-grid,
+    .split,
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        padding: 20px;
+    }
+
+    .hero {
+        min-height: 330px;
+    }
+
+    .gallery-grid img {
+        height: 230px;
+    }
+  
+}
